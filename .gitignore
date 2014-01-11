@@ -7,9 +7,8 @@
 /app/config/staging
 /app/config/production
 
-# Basset development collections
-/public/assets/compiled/public
-/public/assets/compiled/admin
+# compiled assets
+/public/assets/compiled
 
 # Composer
 composer.phar
