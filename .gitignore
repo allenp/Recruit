@@ -1,5 +1,3 @@
-# access logs
-/logs
 # Laravel
 /bootstrap/compiled.php
 /vendor
