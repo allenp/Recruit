@@ -27,15 +27,24 @@ gulp.task('twbs-scripts', function() {
         .pipe(gulp.dest('./public/assets/compiled/js'));
 });
 
+gulp.task('twbs-styles', function() {
+    return gulp.src('./public/assets/css/less/master.less')
+        .pipe(less({
+            paths: ['./vendor/twbs/bootstrap/less']
+        }))
+        .pipe(rename('styles.css'))
+        .pipe(gulp.dest('./public/assets/compiled/public/css'))
+});
+
 gulp.task('fetch-cdn', function() {
     return gulp.src([
-        'https:////ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js' 
+        'https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js' 
         ,'http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'
         ])
         .pipe(gulp.dest('./public/assets/compiled/js'));
 });
 
-gulp.task('app-scripts', ['fetch-cdn'], function() {
+gulp.task('admin-scripts', ['fetch-cdn'], function() {
     return gulp.src([
         './public/assets/js/wysihtml5/wysihtml5-0.3*.js'
         ,'./public/assets/js/wysihtml5/bootstrap-wysihtml5.js'
@@ -46,26 +55,20 @@ gulp.task('app-scripts', ['fetch-cdn'], function() {
         ])
         .pipe(concat('admin-scripts.js'))
         .pipe(gulp.dest('./public/assets/compiled/js'))
-        .pipe(rename('admin-scripts.min.js'))
         .pipe(uglify())
+        .pipe(rename('admin-scripts.min.js'))
         .pipe(gulp.dest('./public/assets/compiled/js'));
 });
 
-
-
-gulp.task('styles', function() {
-    return gulp.src('./public/assets/css/less/master.less')
-        .pipe(less({
-            paths: ['./vendor/twbs/bootstrap/less']
-        }))
-        .pipe(gulp.dest('./public/assets/compiled/public/css'))
-        .pipe(rename('styles.css'));
+gulp.task('public', ['fetch-cdn', 'twbs-scripts', 'twbs-styles'], function() {
+    return gulp.src(['./vendor/twbs/bootstrap/fonts/*'])
+        .pipe(gulp.dest('./public/assets/compiled/fonts'));
 });
 
 gulp.task('default',  function() {
 
-    gulp.run('styles');
-    gulp.run('app-scripts');
+    gulp.run('public');
+    gulp.run('admin-scripts');
 
     gulp.watch('./public/assets/master.less', function(e) {
         gulp.run('styles');

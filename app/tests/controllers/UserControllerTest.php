@@ -21,7 +21,7 @@ class UserControllerTest extends BaseControllerTestCase {
         $this->withInput( $credentials )
             ->requestAction('POST', 'UserController@postLogin');
 
-        $this->assertRedirection( URL::action('BlogController@getIndex') );
+        $this->assertRedirection( URL::action('HomeController@getIndex') );
     }
 
     public function testShouldNotDoLoginWhenWrong()
