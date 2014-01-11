@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
-var es = require('event-stream');
-var less = require('gulp-less');
 var concat = require('gulp-concat');
+var concat = require('gulp-rename');
+var less = require('gulp-less');
 var rename = require('gulp-rename');
 
 gulp.task('twbs-scripts', function() {
@@ -73,5 +73,5 @@ gulp.task('default',  function() {
     gulp.watch('./public/assets/master.less', function(e) {
         gulp.run('styles');
     });
-
 });
+
