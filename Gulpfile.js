@@ -27,11 +27,18 @@ gulp.task('twbs-scripts', function() {
         .pipe(gulp.dest('./public/assets/compiled/js'));
 });
 
-gulp.task('app-scripts', function() {
+gulp.task('fetch-cdn', function() {
+    return gulp.src([
+        'https:////ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js' 
+        ,'http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'
+        ])
+        .pipe(gulp.dest('./public/assets/compiled/js'));
+});
+
+gulp.task('app-scripts', ['fetch-cdn'], function() {
     return gulp.src([
         './public/assets/js/wysihtml5/wysihtml5-0.3*.js'
         ,'./public/assets/js/wysihtml5/bootstrap-wysihtml5.js'
-        ,'http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'
         ,'./public/assets/js/datatables-bootstrap.js'
         ,'./public/assets/js/datatables.fnReloadAjax.js'
         ,'jquery.colorbox.js'
@@ -44,19 +51,21 @@ gulp.task('app-scripts', function() {
         .pipe(gulp.dest('./public/assets/compiled/js'));
 });
 
+
+
 gulp.task('styles', function() {
-    return es.concat(
-        gulp.src('./public/assets/css/master.less')
-            .pipe(less({
-                paths: ['./vendor/twbs/bootstrap/less']
-            }))
-            .pipe(gulp.dest('./public/assets/gulp/css'))
-        ,gulp.src('./public/assets/css/page.css')
-            .pipe(gulp.dest('./public/assets/css'))
-        );
+    return gulp.src('./public/assets/css/less/master.less')
+        .pipe(less({
+            paths: ['./vendor/twbs/bootstrap/less']
+        }))
+        .pipe(gulp.dest('./public/assets/compiled/public/css'))
+        .pipe(rename('styles.css'));
 });
 
-gulp.task('default', ['twbs-scripts', 'styles', 'app-scripts'], function() {
+gulp.task('default',  function() {
+
+    gulp.run('styles');
+    gulp.run('app-scripts');
 
     gulp.watch('./public/assets/master.less', function(e) {
         gulp.run('styles');
