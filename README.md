@@ -2,6 +2,11 @@
 
 A new beginning on Laravel 4.
 
+When you first clone the repo, do:
+```
+composer install
+```
+
 After a pull, do:
 ```
 composer update
