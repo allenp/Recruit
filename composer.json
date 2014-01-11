@@ -1,12 +1,12 @@
 {
-    "name": "andrew13/Laravel-4-Bootstrap-Starter-Site",
-    "description": "Laravel 4 Starter Site",
-    "keywords": ["laravel","Starter Site"],
+    "name": "EduFocal/Recruit",
+    "description": "EduFocal Recruiter App",
+    "keywords": ["EduFocal","Recruit"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Andrew Elkins",
-            "homepage": "http://www.andrewelkins.com"
+            "name": "Andrew Elkins", "Paul Allen", "Jamie Chung", "Jerome Hall"
+            "homepage": "http://corp.edufocal.com"
         }
     ],
 	"require": {

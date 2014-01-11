@@ -13,6 +13,16 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 ```
 
+To run migrations
+```
+php artisan migrate
+```
+
+To build assets
+```
+php artisan basset:build
+```
+
 - User Accounts
     - Organizations
         - Topics
@@ -20,16 +30,3 @@ mv composer.phar /usr/local/bin/composer
 - Questions
 - Tests
 - Answers
-
-<!--
-Gulp Commands
-Setup Gulp (Grunt alternative) and all package dependencies
-```
-npm install
-```
-
-Tell Gulp to watch for css + js file changes then compile and minify the associated files.
-```
-npm run gulp &
-```
--->
