@@ -21,6 +21,7 @@ mv composer.phar /usr/local/bin/composer
 - Tests
 - Answers
 
+<!--
 Gulp Commands
 Setup Gulp (Grunt alternative) and all package dependencies
 ```
@@ -31,3 +32,4 @@ Tell Gulp to watch for css + js file changes then compile and minify the associa
 ```
 npm run gulp &
 ```
+-->
