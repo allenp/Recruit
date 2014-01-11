@@ -104,8 +104,12 @@ Route::get('contact-us', function()
 });
 
 # Posts - Second to last set, match slug
-Route::get('{postSlug}', 'BlogController@getView');
-Route::post('{postSlug}', 'BlogController@postView');
+Route::get('blog/{postSlug}', 'BlogController@getView');
+Route::post('blog/{postSlug}', 'BlogController@postView');
+Route::get('blog', array('before' => 'detectLang', 'uses' => 'BlogController@getIndex'));
 
 # Index Page - Last route, no matches
-Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
+#Route::get('/', array('before' => 'detectLang', 'uses' => 'BlogController@getIndex'));
+
+#Home page - Last route, no matches
+Route::get('/', array('before' => 'detectLang', 'uses' => 'HomeController@getIndex'));

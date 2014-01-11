@@ -1,0 +1,133 @@
+footer {
+  background-color: #33A1D0;
+  color: #cbe1ea;
+  margin-top: 20px;
+
+  &#corporate-footer {
+    background-color: #FFF;
+    min-height: 200px;
+    background-image: url("../images/corporate_footer.png");
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    color: #758D97;
+
+    a {
+      color: #758D97;
+    }
+
+    @media(@non-mobile){
+      a {
+        &#social-blog {
+          background-image: url("../images/corporate_blog_icon.png");
+        } // #social-blog
+
+        &#social-rss {
+         background-image: url("../images/corporate_rss_icon.png");
+        } // #social-rss
+
+        &#social-facebook {
+          background-image: url("../images/corporate_facebook_icon.png");
+        } // #social-facebook
+
+        &#social-twitter {
+          background-image: url("../images/corporate_twitter_icon.png");
+        }// #social-twitter
+
+      } // a
+
+    } // @non-mobile
+
+    .container ul {
+      li {
+        border-bottom: 1px solid #E2EDF2;
+      } // li
+
+      &.social li {
+        border-bottom: none;
+      } // &.social li
+
+    } // .container ul
+
+  } // &#corp-footer
+
+  @media(@mobile) {
+    margin-left: -20px;
+    margin-right: -20px;
+  } // @media(@mobile)
+
+  .container {
+    .center-block();
+    padding: 30px 0;
+
+    .copyright {
+      margin-top: 10px;
+
+      @media(@mobile) {
+        padding: 0 20px;
+      } // @media(@mobile)
+
+      p {
+        margin-bottom: 1em;
+      } // p
+
+    } // .copyright
+
+    ul {
+      list-style: none;
+
+      @media(@mobile) {
+        padding: 0 20px;
+        margin-bottom: 2em;
+      } // @media(@mobile)
+
+      li {
+        border-bottom: 1px solid #87c6e1;
+        padding: 8px 0 8px 0;
+      } // li
+
+      &.social {
+        display: inline-block;
+
+        @media(@non-mobile){
+          li {
+            .pull-left;
+            color: white;
+            border-bottom: none;
+
+            a {
+              width: 80px;
+              display: block;
+              text-align: center;
+              padding-top: 80px;
+              background-repeat: no-repeat;
+              background-position: center top;
+
+              &#social-blog {
+                background-image: url("../images/blog.png");
+              } // #social-blog
+
+              &#social-rss {
+               background-image: url("../images/rss.png");
+              } // #social-rss
+
+              &#social-facebook {
+                background-image: url("../images/facebook.png");
+              } // #social-facebook
+
+              &#social-twitter {
+                background-image: url("../images/twitter.png");
+              }// #social-twitter
+
+            } // a
+
+          } // li
+
+        } // @media(@non-mobile)
+
+      } // &.social
+
+    } // ul
+
+  } // .container
+
+} // footer

@@ -71,7 +71,7 @@ gulp.task('default',  function() {
     gulp.run('admin-scripts');
 
     gulp.watch('./public/assets/master.less', function(e) {
-        gulp.run('styles');
+        gulp.run('twbs-styles');
     });
 });
 

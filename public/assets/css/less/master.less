@@ -66,6 +66,24 @@
 @import "../../../../vendor/twbs/bootstrap/less/utilities.less";
 @import "../../../../vendor/twbs/bootstrap/less/responsive-utilities.less";
 
+
+// Not needed for this project
+// TODO(jchung): Remove once we go production.
+//               Slows down local development with the extra requests.
+// @import "fonts.less"; // Font definitions
+
+// Layout and styling across all pages
+@import "navigation.less"; // Navigation (navbar and such)
+@import "footer.less"; // Footer
+
+// Styles for specific pages
+@import "home.less";
+@import "signup.less";
+/*
+@import "dashboard.less";
+*/
+
+
 // -------------------------------------------------------------
 // -------------------------------------------------------------
 // -------------------------------------------------------------
@@ -75,6 +93,9 @@
  * Custom CSS
  *
  */
+.alert-error {
+  .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+}
 
 /* Wrapper for page content to push down footer */
 #wrap {
