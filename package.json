@@ -5,7 +5,6 @@
         "gulp": "latest",
         "gulp-uglify": "latest",
         "gulp-less": "latest",
-        "gulp-watch": "latest",
         "gulp-concat": "latest",
         "gulp-rename": "latest",
         "event-stream": "latest"
