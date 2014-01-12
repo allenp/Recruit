@@ -4,7 +4,7 @@
     #banner {
 
       @media(@non-mobile) {
-        background-image: url("../images/backgrounds/corporate_homepage_center.jpg");
+        background-image: url("@{public-img-path}backgrounds/corporate_homepage_center.jpg");
         background-position: center bottom;
         background-repeat: no-repeat;
       } // @media(@non-mobile)
@@ -40,7 +40,7 @@
       .homepage.container-fluid#banner-caption;
 
       @media(@non-mobile) {
-        background-image: url("../images/backgrounds/corporate_homepage_shadow.png");
+        background-image: url("@{public-img-path}backgrounds/corporate_homepage_shadow.png");
         background-position: top center;
         background-repeat: no-repeat;
       } // @media(@non-mobile)
@@ -71,12 +71,12 @@
 
       &.left {
         left: 0;
-        background-image: url("../images/backgrounds/homepage_overlay_left.png");
+        background-image: url("@{public-img-path}backgrounds/homepage_overlay_left.png");
       } // &.left
 
       &.right {
         right: 0;
-        background-image: url("../images/backgrounds/homepage_overlay_right.png");
+        background-image: url("@{public-img-path}backgrounds/homepage_overlay_right.png");
       } // &.right
 
     } // .overlay
@@ -109,7 +109,7 @@
         width: 100%;
         position: relative;
         z-index: 10;
-        background-image: url("../images/backgrounds/homepage_banner_overlay.png");
+        background-image: url("@{public-img-path}backgrounds/homepage_banner_overlay.png");
         background-repeat: no-repeat;
         margin-top: -100px;
       }// #overlay
@@ -125,7 +125,7 @@
     z-index: 5;
 
     @media(@non-mobile) {
-      background-image: url("../images/backgrounds/homepage_center.jpg");
+      background-image: url("@{public-img-path}backgrounds/homepage_center.jpg");
       background-repeat: no-repeat;
       background-position: center -80px;
     } // @media(@non-mobile)s
@@ -173,7 +173,7 @@
         li {
           font-size: 14px;
           font-weight: bold;
-          list-style-image: url("../images/bullets/check.png");
+          list-style-image: url("@{public-img-path}bullets/check.png");
           color: #34454d;
           padding: 4px 10px 4px 15px;
 
@@ -211,7 +211,7 @@
 
           > li {
             padding: 0 10px 10px 15px;
-            background-image: url("../images/bullets/bullet.png");
+            background-image: url("@{public-img-path}bullets/bullet.png");
             background-repeat: no-repeat;
             background-position: left 3px;
             line-height: 20px;
@@ -292,11 +292,11 @@
         } // h3, p
 
         .edufocal {
-          background-image: url("../images/bullets/check.png");
+          background-image: url("@{public-img-path}bullets/check.png");
         } // .edufocal
 
         .traditional {
-          background-image: url("../images/bullets/cross.png");
+          background-image: url("@{public-img-path}bullets/cross.png");
         } // .traditional
 
         .edufocal, .traditional {
@@ -401,7 +401,7 @@
             padding: 5px 8px 10px 25px;
             font-size: 14px;
             font-weight: normal;
-            background-image: url("../images/bullets/check_small.png");
+            background-image: url("@{public-img-path}bullets/check_small.png");
             background-position: left 3px;
             background-repeat: no-repeat;
             line-height: 20px;

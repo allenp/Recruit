@@ -7,24 +7,10 @@ var rename = require('gulp-rename');
 
 gulp.task('twbs-scripts', function() {
     return gulp.src([
-           './vendor/twbs/bootstrap/js/transition.js'
-           ,'./vendor/twbs/bootstrap/js/alert.js'
-           ,'./vendor/twbs/bootstrap/js/button.js'
-           ,'./vendor/twbs/bootstrap/js/carousel.js'
-           ,'./vendor/twbs/bootstrap/js/collapse.js'
-           ,'./vendor/twbs/bootstrap/js/dropdown.js'
-           ,'./vendor/twbs/bootstrap/js/modal.js'
-           ,'./vendor/twbs/bootstrap/js/tooltip.js'
-           ,'./vendor/twbs/bootstrap/js/popover.js'
-           ,'./vendor/twbs/bootstrap/js/scrollspy.js'
-           ,'./vendor/twbs/bootstrap/js/tab.js'
-           ,'./vendor/twbs/bootstrap/js/affix.js'
+           './vendor/twbs/bootstrap/dist/js/bootstrap.js'
+           ,'./vendor/twbs/bootstrap/dist/js/bootstrap.min.js'
         ])
-        .pipe(concat('bootstrap.js'))
         .pipe(gulp.dest('./public/assets/compiled/js'))
-        .pipe(rename('bootstrap.min.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./public/assets/compiled/js'));
 });
 
 gulp.task('twbs-styles', function() {
@@ -60,6 +46,15 @@ gulp.task('admin-scripts', ['fetch-cdn'], function() {
         .pipe(gulp.dest('./public/assets/compiled/js'));
 });
 
+gulp.task('front-end-scripts', function() {
+    return gulp.src('./public/assets/js/public.js')
+        .pipe(rename('public.js'))
+        .pipe(gulp.dest('./public/assets/compiled/public/js'))
+        .pipe(uglify())
+        .pipe(rename('public.min.js'))
+        .pipe(gulp.dest('./public/assets/compiled/public/js'));
+});
+
 gulp.task('public', ['fetch-cdn', 'twbs-scripts', 'twbs-styles'], function() {
     return gulp.src(['./vendor/twbs/bootstrap/fonts/*'])
         .pipe(gulp.dest('./public/assets/compiled/fonts'));
@@ -68,6 +63,7 @@ gulp.task('public', ['fetch-cdn', 'twbs-scripts', 'twbs-styles'], function() {
 gulp.task('default',  function() {
 
     gulp.run('public');
+    gulp.run('front-end-scripts');
     gulp.run('admin-scripts');
 
     gulp.watch('./public/assets/master.less', function(e) {

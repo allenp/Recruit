@@ -55,7 +55,7 @@
                 <label for="email">Email</label>
                 <input name="email" value="" placeholder="Email address" class="form-control"/>
                 <label for="password">Password</label>
-                <input type="password" name="password" class="form-control"
+                <input type="password" name="password" class="form-control" />
                 <div class="form-group">
                   <div class="checkbox">
                       <label>
@@ -65,7 +65,7 @@
                 </div>
                 <hr />
                 <button type="submit" value="submit" class="btn btn-primary btn-sm">Sign In</button>
-                <a href="<//echo site_url('forgot_password')?>">Forgot Password?</a>
+                <a href="{{ URL::to('forgot_password') }}">Forgot Password?</a>
             </form>
             </div>
         </div>
@@ -107,10 +107,8 @@
       </div>
   </div>
 </footer>
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<div class="hide">
-</div>
 <!-- Javascripts -->
-<script type="text/javascript" src="/assets/compiled/bootstrap.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/compiled/js/bootstrap.js"></script>
+<script type="text/javascript" src="/assets/compiled/public/js/public.js"></script>
 </body>
