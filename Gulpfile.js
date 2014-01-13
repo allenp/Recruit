@@ -13,7 +13,7 @@ gulp.task('twbs-scripts', function() {
         .pipe(gulp.dest('./public/assets/compiled/js'))
 });
 
-gulp.task('twbs-styles', function() {
+gulp.task('less-styles', function() {
     return gulp.src('./public/assets/css/less/master.less')
         .pipe(less({
             paths: ['./vendor/twbs/bootstrap/less']
@@ -55,19 +55,22 @@ gulp.task('front-end-scripts', function() {
         .pipe(gulp.dest('./public/assets/compiled/public/js'));
 });
 
-gulp.task('public', ['fetch-cdn', 'twbs-scripts', 'twbs-styles'], function() {
+gulp.task('public', ['fetch-cdn', 'twbs-scripts', 'less-styles'], function() {
     return gulp.src(['./vendor/twbs/bootstrap/fonts/*'])
         .pipe(gulp.dest('./public/assets/compiled/fonts'));
+});
+
+gulp.task('dev-setup', function() {
+    return gulp.src(['./bin/pre-commit', './bin/config-pre-commit'])
+        .pipe(gulp.dest('./.git/hooks'));
 });
 
 gulp.task('default',  function() {
 
     gulp.run('public');
     gulp.run('front-end-scripts');
-    gulp.run('admin-scripts');
 
-    gulp.watch('./public/assets/master.less', function(e) {
-        gulp.run('twbs-styles');
+    gulp.watch(['./public/assets/css/less/*'], function(e) {
+        gulp.run('less-styles');
     });
 });
-
