@@ -1,5 +1,5 @@
 # path to phpcs "binary"
-PHPCS_BIN=../../vendor/bin/phpcs
+PHPCS_BIN=./vendor/bin/phpcs
 
 # the coding standard, you can also specify a path to your own standard here 
 # e. g. /path/to/my/standard/dir/
@@ -10,7 +10,8 @@ PHPCS_IGNORE=
 
 # comma-seperated list of sniffs from the standard that should be used
 # use `phpcs --standard=PSR1 -e` to list sniffs for your standard
-PHPCS_SNIFFS=
+PHPCS_SNIFFS=Generic.Files.ByteOrderMark,Generic.NamingConventions.UpperCaseConstantName,Generic.PHP.DisallowShortOpenTag,PSR1.Methods.CamelCapsMethodName,PSR1.Files.SideEffects,Squiz.Classes.ValidClassName,Generic.ControlStructures.InlineControlStructure,PSR2.ControlStructures.ControlStructureSpacing,Squiz.Classes.ValidClassName,Squiz.ControlStructures.ControlSignature,Squiz.ControlStructures.ForEachLoopDeclaration,Squiz.ControlStructures.ForLoopDeclaration,Squiz.ControlStructures.LowercaseDeclaration,Squiz.Functions.FunctionDeclarationArgumentSpacing,Squiz.Functions.FunctionDeclaration,Squiz.Functions.LowercaseFunctionKeywords,Squiz.Functions.MultiLineFunctionDeclaration,Squiz.Scope.MethodScope,Squiz.WhiteSpace.ScopeClosingBrace,Squiz.WhiteSpace.ScopeKeywordSpacing,Squiz.WhiteSpace.SuperfluousWhitespace
+
 #Generic.Files.ByteOrderMark,Generic.PHP.DisallowShortOpenTag
 
 # egrep compatible pattern of  files to be checked
