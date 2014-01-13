@@ -43,11 +43,12 @@ class BaseControllerTestCase extends TestCase
     {
         $action_url = URL::action($action, $params);
 
-        if ($action_url == '')
+        if ($action_url == '') {
             trigger_error("Action '$action' does not exist");
+        }
 
         try {
-            // The following method returns Synfony's DomCrawler
+            // The following method returns Symfony's DomCrawler
             // but it will not be used when testing controllers
             $this->client->request($method, $action_url, array_merge($params, $this->requestInput));
         } catch (HttpException $e) {
@@ -120,8 +121,9 @@ class BaseControllerTestCase extends TestCase
         $this->assertTrue($isRedirection, "Last request was not a redirection. Status code was " . $statusCode);
 
         if ($location) {
-            if (!strpos($location, '://'))
+            if (!strpos($location, '://')) {
                 $location = 'http://:' . $location;
+            }
 
             $this->assertEquals($this->cleanTrailingSlash($location), $this->cleanTrailingSlash($response->headers->get('Location')), 'Page was not redirected to the correct place');
         }
