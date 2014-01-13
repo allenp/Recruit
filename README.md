@@ -28,17 +28,19 @@ php artisan migrate
 ```
 from the root directory of the project.
 
-## To Build Assets
-We currently have Bassets module building the full default project. However we are moving to Gulp. To obtain a basset build run:
+## To setup build tools
+Run
 ```
-php artisan basset:build
+npm install
 ```
-from the root directory of the project.
 
-To build your css + jss with Gulp run:
+Then run:
 ```
 gulp
 ```
+to build your local css + js assets
+
+## Setup your environment
 
 ## Jottings for data model
 - User Accounts
