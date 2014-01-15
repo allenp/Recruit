@@ -124,7 +124,6 @@
     </footer>
     <!-- Javascripts -->
     {{ Basset::show('public.js') }}
-    @section('scripts')
-    @show
+    @yield('scripts')
 </body>
 </html>

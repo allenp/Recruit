@@ -48,7 +48,7 @@ class User extends ConfideUser implements PresentableInterface {
      */
     public function saveRoles($inputRoles)
     {
-        if(! empty($inputRoles)) {
+        if (! empty($inputRoles)) {
             $this->roles()->sync($inputRoles);
         } else {
             $this->roles()->detach();
@@ -63,10 +63,9 @@ class User extends ConfideUser implements PresentableInterface {
     {
         $roles = $this->roles;
         $roleIds = false;
-        if( !empty( $roles ) ) {
+        if (!empty( $roles )) {
             $roleIds = array();
-            foreach( $roles as &$role )
-            {
+            foreach ($roles as &$role) {
                 $roleIds[] = $role->id;
             }
         }
@@ -86,14 +85,13 @@ class User extends ConfideUser implements PresentableInterface {
         $user = Auth::user();
         $redirectTo = false;
 
-        if(empty($user->id) && ! $ifValid) // Not logged in redirect, set session.
-        {
+        // Not logged in redirect, set session.
+        if (empty($user->id) && ! $ifValid) {
             Session::put('loginRedirect', $redirect);
             $redirectTo = Redirect::to('user/login')
                 ->with( 'notice', Lang::get('user/user.login_first') );
-        }
-        elseif(!empty($user->id) && $ifValid) // Valid user, we want to redirect.
-        {
+        } elseif (!empty($user->id) && $ifValid) {
+        // Valid user, we want to redirect.
             $redirectTo = Redirect::to($redirect);
         }
 
@@ -104,7 +102,5 @@ class User extends ConfideUser implements PresentableInterface {
     {
         return (new Confide(new ConfideEloquentRepository()))->user();
     }
-
-
 
 }
