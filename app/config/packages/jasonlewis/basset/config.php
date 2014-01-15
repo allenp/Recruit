@@ -47,6 +47,7 @@ return array(
                 $collection->javascript('//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js');
                 //$collection->add('bootstrap/bootstrap.js');
                 $collection->requireDirectory('../../../vendor/twbs/bootstrap/js');
+                $collection->javascript('public.js');
             })->apply('JsMin');
         },
 
