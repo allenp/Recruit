@@ -28,12 +28,19 @@ return array(
 
     'collections' => array(
 
-        'public' => function($collection)
-        {
+        'public' => function($collection) {
+
+            /*
             $collection->directory('assets/css', function($collection)
             {
                 $collection->add('less/master.less')->apply('Less');
             })->apply('UriRewriteFilter')->apply('CssMin');
+             */
+
+            $collection->directory('assets/css', function ($collection) {
+                $collection->add('public.css');
+            })->apply('UriRewriteFilter')->apply('CssMin');
+
 
             $collection->directory('assets/js', function($collection)
             {
@@ -47,7 +54,8 @@ return array(
         {
             $collection->directory('assets/css', function($collection)
             {
-                $collection->add('less/master.less')->apply('Less');
+                //$collection->add('less/master.less')->apply('Less');
+                $collection->add('public.css');
                 $collection->add('wysihtml5/prettify.css');
                 $collection->add('wysihtml5/bootstrap-wysihtml5.css');
                 $collection->add('datatables-bootstrap.css');
@@ -143,7 +151,7 @@ return array(
     |
     */
 
-    'debug' => false,
+    'debug' => true,
 
     /*
     |--------------------------------------------------------------------------

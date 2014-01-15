@@ -37,6 +37,14 @@ Route::pattern('token', '[0-9a-z]+');
 Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
 {
 
+    # Accounts Management
+    Route::get('accounts', 'AdminAccountsController@getIndex');
+    Route::get('accounts/{account}/edit', 'AdminAccountsController@getEdit');
+    Route::post('accounts/{account}/edit', 'AdminAccountsController@postEdit');
+    Route::get('accounts/create', 'AdminAccountsController@getCreate');
+    Route::post('accounts/create', 'AdminAccountsController@postCreate');
+    Route::controller('accounts', 'AdminAccountsController');
+
     # Comment Management
     Route::get('comments/{comment}/edit', 'AdminCommentsController@getEdit');
     Route::post('comments/{comment}/edit', 'AdminCommentsController@postEdit');
@@ -107,9 +115,6 @@ Route::get('contact-us', function()
 Route::get('blog/{postSlug}', 'BlogController@getView');
 Route::post('blog/{postSlug}', 'BlogController@postView');
 Route::get('blog', array('before' => 'detectLang', 'uses' => 'BlogController@getIndex'));
-
-# Index Page - Last route, no matches
-#Route::get('/', array('before' => 'detectLang', 'uses' => 'BlogController@getIndex'));
 
 #Home page - Last route, no matches
 Route::get('/', array('before' => 'detectLang', 'uses' => 'HomeController@getIndex'));
