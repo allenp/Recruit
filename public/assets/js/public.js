@@ -3,6 +3,7 @@ $(document).ready(function() {
     e.preventDefault();
     $('#login-form').toggle();
   });
+  /*
   $('#login-form').submit(function() {
     $.post($(this).attr('action'),
       $(this).serialize(),
@@ -15,4 +16,5 @@ $(document).ready(function() {
       });
     return false;
   });
+  */
 });
