@@ -4,8 +4,12 @@ class UsersTableSeeder extends Seeder {
 
     public function run()
     {
+        //integrity constraints
+        DB::table('assigned_roles')->delete();
+
         DB::table('users')->delete();
 
+        $account = Account::first()->id;
 
         $users = array(
             array(
@@ -16,15 +20,17 @@ class UsersTableSeeder extends Seeder {
                 'confirmation_code' => md5(microtime().Config::get('app.key')),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'account_id' => $account
             ),
             array(
-                'username'      => 'user',
-                'email'      => 'user@example.org',
-                'password'   => Hash::make('user'),
+                'username'      => 'manager',
+                'email'      => 'manager@example.org',
+                'password'   => Hash::make('manager'),
                 'confirmed'   => 1,
                 'confirmation_code' => md5(microtime().Config::get('app.key')),
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
+                'account_id' => $account
             )
         );
 

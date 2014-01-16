@@ -40,8 +40,6 @@ gulp
 ```
 to build your local css + js assets
 
-## Setup your environment
-
 ## Jottings for data model
 - User Accounts
     - Organizations

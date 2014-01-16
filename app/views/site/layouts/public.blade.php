@@ -66,7 +66,7 @@
             <form id="login-form" method="post" action="{{ URL::to('user/login') }}" accept-charset="UTF-8">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                 <label for="email">Email</label>
-                <input name="email" tabindex="1" value="{{ Input::old('email') }}" placeholder="Email address" class="form-control"/>
+                <input name="email" tabindex="1" value="" placeholder="Email address" class="form-control"/>
                 <label for="password">Password</label>
                 <input type="password" name="password" tabindex="1" class="form-control" />
                 <div class="form-group">
@@ -91,8 +91,10 @@
     </div>
 
     <!-- Content -->
+    <div class="container">
     @yield('content')
     <!-- ./content -->
+    </div>
     <footer id="corporate-footer">
     <div class="container">
         <div class="copyright col-sm-2">

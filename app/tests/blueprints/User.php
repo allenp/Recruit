@@ -12,7 +12,12 @@ Woodling::seed('UserAdmin', array('class' => 'User', 'do' => function($blueprint
     $blueprint->confirmed = 1;
     $blueprint->created = Carbon::now();
     $blueprint->updated = Carbon::now()->addMonths(2);
-    $blueprint->role = function() { return Woodling::retrieve('RoleAdmin'); };
+    $blueprint->account_id = function() {
+        return Woodling::retrieve('ConsultingAccount')->id;
+    };
+    $blueprint->role = function() {
+        return Woodling::retrieve('RoleAdmin');
+    };
 }));
 
 Woodling::seed('UserUser', array('class' => 'User', 'do' => function($blueprint)
@@ -23,5 +28,10 @@ Woodling::seed('UserUser', array('class' => 'User', 'do' => function($blueprint)
     $blueprint->confirmed = 1;
     $blueprint->created = Carbon::now();
     $blueprint->updated = Carbon::now()->addMonths(2);
-    $blueprint->role = function() { return Woodling::retrieve('RoleComment'); };
+    $blueprint->account_id = function() {
+        return Woodling::retrieve('ConsultingAccount')->id;
+    };
+    $blueprint->role = function() {
+        return Woodling::retrieve('RoleManager');
+    };
 }));
