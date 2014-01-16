@@ -13,6 +13,7 @@ class CreateIntentsTable extends Migration {
 	public function up()
 	{
 		Schema::create('intents', function(Blueprint $table) {
+            $table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->string('intent_key');
 			$table->string('details');

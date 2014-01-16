@@ -14,6 +14,7 @@ class EntrustPermissions extends Migration {
         // Creates the permissions table
         Schema::create('permissions', function($table)
         {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('display_name')->unique();
@@ -22,6 +23,7 @@ class EntrustPermissions extends Migration {
         // Creates the permission_role (Many-to-Many relation) table
         Schema::create('permission_role', function($table)
         {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('permission_id')->unsigned()->index();
             $table->integer('role_id')->unsigned()->index();

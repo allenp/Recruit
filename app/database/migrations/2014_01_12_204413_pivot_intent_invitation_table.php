@@ -13,6 +13,7 @@ class PivotIntentInvitationTable extends Migration {
 	public function up()
 	{
 		Schema::create('intent_invitation', function(Blueprint $table) {
+            $table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->integer('intent_id')->unsigned()->index();
 			$table->integer('invitation_id')->unsigned()->index();

@@ -13,6 +13,7 @@ class CreateInvitationsTable extends Migration {
 	public function up()
 	{
 		Schema::create('invitations', function(Blueprint $table) {
+            $table->engine = 'InnoDB';
 			$table->increments('id');
 			$table->string('invite_key');
 			$table->integer('account_id');
