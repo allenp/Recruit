@@ -199,6 +199,7 @@ return array(
         'Presentable'     => 'Robbo\Presenter\PresentableInterface', // Presenter
         'Basset'          => 'Basset\Facade', // Better Asset Management
         'String'          => 'Andrew13\Helpers\String', // String
+        'Slugger'         => 'Allenp\Helpers\String',
         'Carbon'          => 'Carbon\Carbon', // Carbon
         'Datatables'      => 'Bllim\Datatables\Datatables', // DataTables
 

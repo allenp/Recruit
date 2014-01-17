@@ -7,8 +7,13 @@
 /app/config/staging
 /app/config/production
 
+# Tools
+/node_modules
+
 # compiled assets
 /public/assets/compiled
+/public/assets/css/public.css
+/public/assets/css/admin.css
 
 # Composer
 composer.phar
