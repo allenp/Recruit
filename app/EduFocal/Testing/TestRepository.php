@@ -1,17 +1,23 @@
 <?php namespace EduFocal\Testing;
 
-class TestRepository {
+use \Test;
 
-    protected $test;
+class TestRepository implements TestRepositoryInterface {
 
-    public function __construct(Test $test)
+    public function findById($id)
     {
-        $this->test = $test;
+        return Test::where('id', '=', $id);
     }
 
-    public function getById($id)
+    public function create($options=array())
     {
-        return $this->test->where('id', '=', $id);
+        $test = Test::create($options);
+        return $test;
+    }
+
+    public function save($test)
+    {
+        return $test->save();
     }
 
 }

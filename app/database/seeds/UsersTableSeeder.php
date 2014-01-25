@@ -31,6 +31,26 @@ class UsersTableSeeder extends Seeder {
                 'created_at' => new DateTime,
                 'updated_at' => new DateTime,
                 'account_id' => $account
+            ),
+            array(
+                'username' => 'teacher',
+                'email' => 'teacher@example.com',
+                'password' => Hash::make('teacher'),
+                'confirmed' => 1,
+                'confirmation_code' => md5(microtime().Config::get('app.key')),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'account_id' => $account
+            ),
+            array(
+                'username' => 'applicant',
+                'email' => 'applicant@example.com',
+                'password' => Hash::make('teacher'),
+                'confirmed' => 1,
+                'confirmation_code' => md5(microtime().Config::get('app.key')),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+                'account_id' => $account
             )
         );
 

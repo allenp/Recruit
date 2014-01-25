@@ -30,6 +30,7 @@
         "squizlabs/php_codesniffer": "1.*"
 	},
 	"autoload": {
+        "psr-4": { "EduFocal\\": ["app/EduFocal"] },
 		"classmap": [
 
 			"app/commands",

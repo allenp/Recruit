@@ -2,8 +2,9 @@
 
 interface TestSessionInterface {
 
-    public function startTest( $topic, $user, $teacher );
-    public function getQuestionAnswers( $pageIndex );
-    public function endTest( $test_id , $user );
+    public function start($options);
+    public function getAnswers($test, $pageIndex);
+    public function setAnswers($test, $answers);
+    public function end($test);
 
 }

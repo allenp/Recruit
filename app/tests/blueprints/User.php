@@ -35,3 +35,19 @@ Woodling::seed('UserUser', array('class' => 'User', 'do' => function($blueprint)
         return Woodling::retrieve('RoleManager');
     };
 }));
+
+Woodling::seed('UserTeacher', array('class' => 'User', 'do' => function($blueprint)
+{
+    $blueprint->username = 'teacher';
+    $blueprint->email = 'teacher@example.org';
+    $blueprint->confirmation_code = Uuid\Uuid::v4(false);
+    $blueprint->confirmed = 1;
+    $blueprint->created = Carbon::now();
+    $blueprint->updated = Carbon::now()->addMonths(2);
+    $blueprint->account_id = function() {
+        return Woodling::retrieve('ConsultingAccount')->id;
+    };
+    $blueprint->role = function() {
+        return Woodling::retrieve('RoleTeacher');
+    };
+}));

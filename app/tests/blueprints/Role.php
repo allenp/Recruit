@@ -14,3 +14,9 @@ Woodling::seed('RoleManager', array('class' => 'Role', 'do' => function($bluepri
     $blueprint->id = 1;
     $blueprint->name = 'manager';
 }));
+
+Woodling::seed('RoleTeacher', array('class' => 'Role', 'do' => function($blueprint)
+{
+    $blueprint->id = 1;
+    $blueprint->name = 'teacher';
+}));

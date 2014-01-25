@@ -2,5 +2,8 @@
 
 interface QuestionRepositoryInterface {
 
-    public function findByTopicAndFormat($topic_id, $format);
+    public function create($options);
+    public function save($question);
+    public function countAvailableQuestions();
+
 }
