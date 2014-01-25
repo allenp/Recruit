@@ -10,32 +10,29 @@ var sources = {
         ,'http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js'
         ],
     less : [
-        './public/assets/css/less/master.less'
+        'public/assets/css/less/master.less'
         ]
 };
 
 gulp.task('fetch-cdn', function() {
     return gulp.src(sources.cdn)
-               .pipe(gulp.dest('./public/assets/js'));
+               .pipe(gulp.dest('public/assets/js'));
 });
 
 gulp.task('less', function() {
-    return gulp.src([sources.less])
-        .pipe(less({ paths: ['./vendor/twbs/bootstrap/less'] }))
+    return gulp.src(sources.less)
         .pipe(rename('public.css'))
-        .pipe(gulp.dest('./public/assets/css'));
+        .pipe(gulp.dest('public/assets/css'));
 });
 
 gulp.task('dev-setup', function() {
-    return gulp.src(['./bin/pre-commit', './bin/config-pre-commit'])
-        .pipe(gulp.dest('./.git/hooks'));
+    return gulp.src(['bin/pre-commit', 'bin/config-pre-commit'])
+        .pipe(gulp.dest('.git/hooks'));
 });
 
-gulp.task('default',  function() {
-    gulp.run('less');
-    gulp.run('admin-css');
-
-    gulp.watch(['./public/assets/css/less/*'], function(e) {
-        gulp.run('less');
-    });
+gulp.task('watch',  function() {
+    // All the items that we want to watch
+    gulp.watch(['public/assets/css/less/*'], ['less']);
 });
+
+gulp.task('default', ['fetch-cdn', 'dev-setup', 'watch'])
