@@ -1,6 +1,6 @@
 <?php namespace EduFocal\Testing;
 
-use EduFocal\Testing\Query\QuestionQueryInterface;
+use EduFocal\Testing\QuestionQueryInterface;
 
 class TestSession implements TestSessionInterface {
 

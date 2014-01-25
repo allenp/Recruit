@@ -1,6 +1,9 @@
-<?php namespace EduFocal\Testing\Query;
+<?php namespace EduFocal\Testing;
 
-class RandomQuestionSelection implements QuestionQueryInterface {
+use DB;
+use \Question;
+
+class  EloquentRandomQuestionSelection implements QuestionQueryInterface {
 
     public function getQuestions($options=array())
     {
@@ -35,7 +38,6 @@ class RandomQuestionSelection implements QuestionQueryInterface {
             $query->where('topic_id', '=', $options['topic_id']);
         }
 
-        //the teacher's/owner of question's user_id
         if (isset($options['user_id'])) {
             $query->where('user_id', '=', $options['user_id']);
         }
@@ -47,18 +49,18 @@ class RandomQuestionSelection implements QuestionQueryInterface {
         $query->where('status', '=', 'Accepted');
         $query->where('question_id', '=', 0);
 
-        $query->orderBy(DB::raw('RAND()'));
-
         if (! isset($options['limit'])) {
             $options['limit'] = 5;
         }
 
-        $query->take($options['limit']);
+        $result = $query->lists('id');
 
-        //outer query to order by weight
-        $result = DB::table(DB::raw($query->toSql()));
-        $result->orderBy('weight', 'desc');
-        return $result->get();
+        $rand = array_rand($result, $options['limit']);
+        $subset = [];
+        for ($i = 0; $i < count($rand); $i++) {
+            $subset[] = $result[$rand[$i]];
+        }
+
+        return Question::whereIn('id', $subset)->orderBy('weight', 'desc')->get();
     }
-
 }

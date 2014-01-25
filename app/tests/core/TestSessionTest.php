@@ -16,7 +16,7 @@ class TestSessionTest extends TestCase {
     protected function createDependencies()
     {
         $tr = m::mock('EduFocal\Testing\TestRepository');
-        $qb = m::mock('EduFocal\Testing\Query\QuestionQueryInterface');
+        $qb = m::mock('EduFocal\Testing\QuestionQueryInterface');
         $ar = m::mock('EduFocal\Testing\AnswerRepositoryInterface');
         return array($tr, $qb, $ar);
     }

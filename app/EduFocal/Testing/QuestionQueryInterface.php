@@ -1,4 +1,4 @@
-<?php namespace EduFocal\Testing\Query;
+<?php namespace EduFocal\Testing;
 
 interface QuestionQueryInterface {
 
