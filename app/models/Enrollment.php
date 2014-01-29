@@ -1,6 +1,6 @@
 <?php
 
-class Subject extends Eloquent {
+class Enrollment extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array();

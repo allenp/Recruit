@@ -2,7 +2,7 @@
 
 use Allenp\Helpers\String;
 
-class Topic extends Eloquent {
+class Course extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array();
