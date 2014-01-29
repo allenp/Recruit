@@ -13,7 +13,7 @@ class TestsTableSeeder extends Seeder {
             array(
                 'user_id' => $user->id,
                 'teacher_id' => $teacher->id,
-                'subject_id' => $topic->subject_id,
+                'course_id' => $topic->course_id,
                 'topic_id' => $topic->id,
                 'started_at' => Carbon::now(),
                 'percentage' => 0,

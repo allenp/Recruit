@@ -6,12 +6,12 @@ class TopicsTableSeeder extends Seeder {
     {
         DB::table('topics')->delete();
 
-        $subject = Subject::where('permalink','=', 'mathematics')->first();
+        $course = Course::where('permalink','=', 'mathematics')->first();
 
         $topics = array(
             array(
                 'name' => 'Functions and Graphs',
-                'subject_id' => $subject->id,
+                'course_id' => $course->id,
                 'permalink' => 'functions_graphs',
                 'multiple_choice' => 1,
                 'short_answer' => 1,
@@ -21,7 +21,7 @@ class TopicsTableSeeder extends Seeder {
             ),
             array(
                 'name' => 'Geometry/Trigonometry',
-                'subject_id' => $subject->id,
+                'course_id' => $course->id,
                 'permalink' => 'geometry_trigonometry',
                 'multiple_choice' => 1,
                 'short_answer' => 1,

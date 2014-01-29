@@ -2,7 +2,7 @@
 
 interface TestRepositoryInterface {
 
-    public function findById($id);
+    public function find($options);
     public function create($options);
     public function save($test);
 

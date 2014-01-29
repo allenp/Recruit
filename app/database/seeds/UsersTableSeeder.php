@@ -50,7 +50,7 @@ class UsersTableSeeder extends Seeder {
                 'confirmation_code' => md5(microtime().Config::get('app.key')),
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-                'account_id' => $account
+                'account_id' => null
             )
         );
 

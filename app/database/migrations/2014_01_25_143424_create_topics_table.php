@@ -15,7 +15,7 @@ class CreateTopicsTable extends Migration {
         Schema::create('topics', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('subject_id')->references('id')->on('subjects')->unsigned();
+            $table->integer('course_id')->references('id')->on('courses')->unsigned();
             $table->string('name');
             $table->string('permalink');
             $table->boolean('multiple_choice')->default(1);

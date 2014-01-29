@@ -3,7 +3,7 @@
 use Woodling\Woodling;
 use Carbon\Carbon;
 
-Woodling::seed('SubjectOne', array('class' => 'Subject', 'do' => function($blueprint) {
+Woodling::seed('CourseOne', array('class' => 'Course', 'do' => function($blueprint) {
 
     $blueprint->name = 'Planetary Bodies';
 }));

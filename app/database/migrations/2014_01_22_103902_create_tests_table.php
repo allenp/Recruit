@@ -17,7 +17,7 @@ class CreateTestsTable extends Migration {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('teacher_id')->nullable();
-            $table->integer('subject_id');
+            $table->integer('course_id')->references('id')->on('courses')->unsigned();
             $table->integer('topic_id');
             $table->timestamp('started_at');
             $table->timestamp('finished_at')->nullable();

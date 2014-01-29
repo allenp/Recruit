@@ -13,12 +13,12 @@ Woodling::seed('FirstTest', array('class' => 'Test', 'do' => function($blueprint
         Woodling::retrieve('UserTeacher')->id;
     };
 
-    $blueprint->subject_id = function() {
-        Woodling::retrieve('TopicOne')->id;
+    $blueprint->course_id = function() {
+        Woodling::retrieve('TopicOne')->course_id;
     };
 
     $blueprint->topic_id = function() {
-        return Woodling::retrieve('TopicOne')->subject_id;
+        return Woodling::retrieve('TopicOne')->id;
     };
 
     $blueprint->started_at = Carbon::now();

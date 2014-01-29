@@ -15,7 +15,7 @@ class TestSessionTest extends TestCase {
 
     protected function createDependencies()
     {
-        $tr = m::mock('EduFocal\Testing\TestRepository');
+        $tr = m::mock('EduFocal\Testing\EloquentTestRepository');
         $qb = m::mock('EduFocal\Testing\QuestionQueryInterface');
         $ar = m::mock('EduFocal\Testing\AnswerRepositoryInterface');
         return array($tr, $qb, $ar);
@@ -139,9 +139,8 @@ class TestSessionTest extends TestCase {
 
         $this->assertEquals($test->user_id, 1);
         $this->assertEquals($test->topic_id, 2);
-        $this->assertEquals($test->subject_id, 3);
+        $this->assertEquals($test->course_id, 3);
         $this->assertEquals($test->marked, true);
-        $this->assertEquals($test->weight, '');
         $this->assertEquals($test->format, 'multiple');
     }
 
@@ -184,7 +183,7 @@ class TestSessionTest extends TestCase {
         $options = array(
             'user_id' => 1,
             'topic_id' => 2,
-            'subject_id' => 3,
+            'course_id' => 3,
             'started_at' => Carbon::now(),
             'marked' => true,
             'weight' => '',

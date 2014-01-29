@@ -162,7 +162,7 @@ class TestSession implements TestSessionInterface {
             'question_id' => $question->id,
             'question_type' => $question->type,
             'resolved' => 'no',
-            'subject' => $test->subject_id,
+            'course' => $test->course_id,
             'teacher_id' => $question->user_id,
             'test_id' => $test->id,
             'topic_id' => $question->topic_id,
