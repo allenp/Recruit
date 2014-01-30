@@ -8,7 +8,7 @@ use DB;
  * January, 2014
  *
  */
-class EloquentAccountCoursesQuery implements CourseQueryInterface {
+class EloquentCoursesForAccountQuery implements CoursesForAccountQueryInterface {
 
     public function getCourses($account_id)
     {
