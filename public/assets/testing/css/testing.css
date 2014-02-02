@@ -1,0 +1,369 @@
+body
+{
+    background: rgb(234, 234, 234) url(../img/test_bg.png) repeat-x scroll 0 0;
+}
+
+.timer
+{
+    border-radius: 6px;
+    border: solid 1px #eee;
+    background-color: rgb(244, 244, 243);
+    box-shadow: inset rgb(170, 170, 170) 0px 0px 8px;
+    margin-bottom: 15px;
+    padding: 15px 15px 0;
+    margin:0 -15px 15px;
+}
+
+.timer h5
+{
+    margin-top: 0;
+}
+
+.test
+{
+    background-color: #fff;
+    box-shadow: rgb(153, 153, 153) 0px 2px 6px;
+    margin-bottom: 16px;
+    padding: 15px;
+}
+
+.test ul.choices
+{
+    margin: 3px 10px 30px 20px;
+}
+
+.test .number
+{
+    float: left;
+    font-weight: bold;
+    margin: 0 8px 6px 0;
+}
+
+.test label
+{
+    font-weight: normal;
+}
+
+.test .question
+{
+    padding: 10px;
+    background-color: rgb(245, 255, 255);
+    border-bottom: solid 1px #eee;
+}
+
+.opt,
+.test input
+{
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.opt p,
+.opt br
+{
+    margin: 0;
+    padding: 0;
+}
+
+.test .logo
+{
+    float: left;
+    margin: 0 15px 15px 0;
+}
+
+.test h1
+{
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.test h6
+{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.test .teacher
+{
+    font-style: italic;
+    margin-top: -10px;
+}
+
+.test .divider {
+    background: rgb(235, 235, 235);
+    clear: both;
+    height: 3px;
+    margin: 8px 0 15px 0;
+}
+
+.controls
+{
+    margin-bottom: 30px;
+    padding-right: 30px;
+}
+
+@media(min-width: 768px)
+{
+
+    #content > .container
+    {
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 992px) {
+    .timer
+    {
+        width: 30%;
+        position: fixed;
+        margin: 0;
+    }
+}
+
+.results {
+    margin: 0 auto 0 auto;
+    padding: 20px 0 20px 0;
+}
+
+.results .grade {
+    background: rgb(231, 242, 247);
+    border-bottom: 1px solid rgb(173, 200, 212);
+    border-radius: 3px 3px 0 0;
+    padding: 30px 16px 20px 16px;
+}
+
+.results .score {
+    background: rgb(255, 255, 255);
+    box-shadow: rgb(73, 139, 67) 0px 1px 3px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 8px 0 8px 0;
+}
+
+.results .review
+{
+    text-align: center;
+}
+
+.results .score span
+{
+    color: rgb(90, 187, 74);
+    font-size: 32px;
+}
+
+.results .score span sup
+{
+    font-size: 16px;
+}
+
+.results .topic-summary
+{
+    color: rgb(0, 114, 163);
+}
+
+.results .experience .summary
+{
+    background: url(../img/results.png) no-repeat center center;
+    height: 58px;
+    text-align: center;
+    line-height: 65px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0px 0px 15px rgb(0,0,0);
+}
+
+.results .rating {
+    background: rgb(245, 250, 252);
+    border-radius: 0 0 3px 3px;
+    min-height: 80px;
+    padding: 20px 16px 30px 16px;
+}
+
+.results hr
+{
+    border: 0;
+    border-top: 1px solid rgb(204, 204, 204);
+    display: block;
+    height: 1px;
+}
+
+.hint
+{
+    border: solid 1px #e5e5e5;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.explain
+{
+    border: solid 1px #e5e5e5;
+}
+
+.hint header,
+.explain header
+{
+    background: url(../img/minimize.png) no-repeat #5abb4a 183px center;
+    color: #FFF;
+    cursor: pointer;
+    padding: 4px 5px;
+}
+
+.explain header
+{
+    background-position: 230px center;
+}
+
+.hint .img,
+.explain .img
+{
+    background: #FFF;
+    float: left;
+    height: 25px;
+    margin-right: 5px;
+    width: 25px;
+}
+
+.hint h4,
+.explain h4
+{
+    margin: 0;
+    padding-top: 3px;
+}
+
+.hint section,
+.explain section
+{
+    background: #FFF;
+    height: 90px;
+    overflow: auto;
+    padding: 6px;
+}
+
+.explain section
+{
+    height: auto;
+}
+
+.hint.closed section,
+.explain.closed section
+{
+    display: none;
+}
+
+@media (min-width: 992px) {
+
+    .hint,
+    .explain
+    {
+        box-shadow: #999 2px 2px 5px;
+        float: right;
+        margin-right: -210px;
+        moz-box-shadow: #999 2px 2px 5px;
+        webkit-box-shadow: #999 2px 2px 5px;
+        width: 195px;
+        margin-top:0;
+        margin-bottom: 0;
+    }
+
+    .explain
+    {
+        width: 250px;
+        margin-right: -265px;
+    }
+
+    .hint.closed
+    {
+        margin-right: -100px;
+        width: 85px;
+    }
+
+    .explain.closed
+    {
+        margin-right: -115px;
+        width: 100px;
+    }
+
+    .hint header,
+    .explain header
+    {
+        background: url(../img/minimize.png) no-repeat #5abb4a 183px center;
+        color: #FFF;
+        cursor: pointer;
+        padding: 4px 5px;
+    }
+
+    .explain header
+    {
+        background-position: 230px center;
+    }
+    .hint .img,
+    .explain .img
+    {
+        background: #FFF;
+        float: left;
+        height: 25px;
+        margin-right: 5px;
+        width: 25px;
+    }
+    .hint h4,
+    .explain h4
+    {
+        margin: 0;
+        padding-top: 3px;
+    }
+    .hint section,
+    .explain section
+    {
+        background: #FFF;
+        height: 90px;
+        overflow: auto;
+        padding: 6px;
+    }
+
+    .explain section
+    {
+        height: auto;
+    }
+
+    .hint.closed section,
+    .explain.closed section
+    {
+        display: none;
+    }
+}
+
+.stats
+{
+    background: #e7f2f7;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    moz-border-radius: 8px;
+    webkit-border-radius: 8px;
+}
+
+.stats li
+{
+    float: left;
+    padding: 10px 15px;
+}
+
+.stats h4
+{
+    margin-bottom: 0;
+}
+
+.test .incorrect {
+    background: rgb(237, 187, 189);
+}
+
+.test .correct {
+    background: rgb(194, 242, 202);
+}
+
+img
+{
+    max-width: 100%;
+}
